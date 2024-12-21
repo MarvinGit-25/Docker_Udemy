@@ -1,0 +1,23 @@
+docker container run | docker image pull, docker container create, docker container start, docker container exec.
+docker container ps | mostra os containers ativos
+docker container ps -a | mostra os containers ativos e não ativos
+docker container run --rm -> nome do container | incia um container e já apaga da lista de containers
+docker container run -it ubuntu bash | entra no terminal do container
+docker container run --name nome -it ubuntu bash | nomeia um container
+docker container ls -a | lista os containers ativos e não ativos
+docker container start -ai -> nome do container | começa a utilizar o conteiner criado
+docker container run -p 8080:80 | mapeia uma porta
+docker container run -p 8080:80 -v | mapeia um volume
+docker container run -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx | execulta um servidor 
+docker container run -d --name ex-daemon-basic -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx | execultando container em background
+docker container stop -> nome do container | para o servidor
+docker container start -> nome do container | starta um container
+docker container stop -> nome do container | para um container
+docker container restart -> nome do container | reinicia um container
+docker container ps | mostra os container ativos
+docker container logs -> nome do container | mostra os logs do container
+docker container inspect -> nome do container | mostra varias caracteristicas do container no formato json
+docker image tag -> nome da imagem -> novo nome
+docker image build -t ex-simple-build | cria uma imagem
+docker container run ex-build-arg bash -c 'echo $s3_Bucket' | imagem com parametro
+docker image build --build-arg s3_Bucket=myapp -t ex-build-arg . | muda nome do parametro da imagem
